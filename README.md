@@ -10,7 +10,9 @@ These two scripts add the option to export :
 ## How to install
 
 Open Tiled, go to Preferences, Plugins tab, Extensions > Open to display the extensions folder.
-Clone this repo there. Tiled will reload all the extensions as soon as you create the files.
+
+Clone this repo there or [download the project zip](https://github.com/kevinleguillou/tiled-gbdk-exporter/archive/refs/heads/master.zip) and extract it there. Tiled will reload all the extensions as soon as you create the files.
+
 `Export As...` should now display a new export option in the file format list.
 
 ## Planned updates
