@@ -23,8 +23,8 @@ This means you can design your tiles with any color palette you want in your des
 
 ## Planned updates
 
-✅ Remove the hardcoded palette and make it work with any type of color palette
-🔲 Export Custom Properties to be used during Gameboy runtime, such as flagging tiles as walls, etc.
-🔲 Export [Object layer](https://doc.mapeditor.org/en/stable/manual/objects/) info to adding checkpoints like an entrance or exit marker, etc.
-🔲 Support for 2 layers maps, allowing you to create maps with Sprites over the bkg layer
-🔲 Sprite export
+- ✅ Remove the hardcoded palette and make it work with any type of color palette 
+- 🔲 Export Custom Properties to be used during Gameboy runtime, such as flagging tiles as walls, etc. 
+- 🔲 Export [Object layer](https://doc.mapeditor.org/en/stable/manual/objects/) info to adding checkpoints like an entrance or exit marker, etc.
+- 🔲 Support for 2 layers maps, allowing you to create maps with Sprites over the bkg layer 
+- 🔲 Sprite export 
