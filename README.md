@@ -15,10 +15,16 @@ Clone this repo there or [download the project zip](https://github.com/kevinlegu
 
 `Export As...` should now display a new export option in the file format list.
 
+## How to use
+
+Your tileset image should respect the Gameboy limitations : max 4 colors, which will be ordered by luminance when exported.
+
+This means you can design your tiles with any color palette you want in your design tools (grayscale, shades of green, Super Gameboy, etc.), the exporting process will just convert them.
+
 ## Planned updates
 
-- Remove the hardcoded palette and make it work with any type of color palette
-- Export Custom Properties to be used during Gameboy runtime, such as flagging tiles as walls, etc.
-- Export [Object layer](https://doc.mapeditor.org/en/stable/manual/objects/) info to adding checkpoints like an entrance or exit marker, etc.
-- Support for 2 layers maps, allowing you to create maps with Sprites over the bkg layer
-- Sprite export
+✅ Remove the hardcoded palette and make it work with any type of color palette
+🔲 Export Custom Properties to be used during Gameboy runtime, such as flagging tiles as walls, etc.
+🔲 Export [Object layer](https://doc.mapeditor.org/en/stable/manual/objects/) info to adding checkpoints like an entrance or exit marker, etc.
+🔲 Support for 2 layers maps, allowing you to create maps with Sprites over the bkg layer
+🔲 Sprite export

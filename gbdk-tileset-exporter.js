@@ -12,11 +12,21 @@ const getSourceContent = (content, mapName) => {
 }
 
 const tileSize = 8
-const palette = {
-	"#e0f8d0": 0,
-	"#88c070": 1,
-	"#346856": 2,
-	"#081820": 3,
+const palette = []
+
+// We use this bruteforce approach to avoid counting unused colors in colorTable()
+// (happens when exporting PNGs when using indexed colors in Aseprite)
+const computePalette = (image) => {
+	for(let y = 0; y < image.height; y++){
+		for(let x = 0; x < image.height; x++){
+			const currentColor = image.pixel(x, y)
+			if(!palette.find(color => color === currentColor)){
+				palette.push(currentColor)
+			}
+		}
+	}
+	// Sort colors by inverse value (lighter colors first)
+	palette.sort((a, b) => (b - a))
 }
 
 const getLineAsEncodedHex = (startX, startY, image) => {
@@ -24,7 +34,7 @@ const getLineAsEncodedHex = (startX, startY, image) => {
 
 	const width = tileSize
 	for (let x = 0; x < width; x++) {
-		const pixelValue = palette[image.pixelColor(startX + x, startY)]
+		const pixelValue = palette.indexOf(image.pixel(startX + x, startY))
 		switch(pixelValue){
 			default:
 			case 0:
@@ -65,8 +75,10 @@ const getEncodedTile = (tileX, tileY, image) => {
 }
 
 const writeTileset = (tileset, filename) => {
-	// Isolate each 8x8 tile and convert to the hex encoded version
 	const image = new Image(tileset.image)
+	computePalette(image)
+
+	// Isolate each 8x8 tile and convert to the hex encoded version
 	let tileArray = Array();
 	for (let y = 0; y < image.height; y += tileSize) {
 		for (let x = 0; x < image.width; x += tileSize) {
